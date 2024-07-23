@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .forms import Restaurant_list
+
+
 # Create your views here.
 def rest_app(request):
     template = loader.get_template('master.html')
@@ -17,4 +18,8 @@ def rest_list(request):
             #greeting = f"Hi, {first_name} {last_name}!"
             #print(greeting)
             form.save()
-            return render(request, 'home.html')
+            return render(request, 'master.html')
+
+def rest_users(request):
+    template = loader.get_template('master.html')
+    return HttpResponse(template.render())

@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+  RestForm
+{% endblock %}
+
+
+{% block content %}
+
+<h1>{% if object %}Edit Rest{% else %}Add New Rest{% endif %}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'rest_list' %}">Back to Rest List</a>
+{% endblock %}

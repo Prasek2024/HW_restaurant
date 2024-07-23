@@ -1,0 +1,16 @@
+
+{% extends "master.html" %}
+
+{% block title %}
+  RestForm
+{% endblock %}
+
+
+{% block content %}
+    <h1>Are you sure you want to delete "{{ object.restaurant_name }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'rest_list' %}">Cancel</a>
+{% endblock %}

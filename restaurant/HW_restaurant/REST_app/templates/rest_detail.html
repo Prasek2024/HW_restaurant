@@ -1,0 +1,16 @@
+
+{% extends "master.html" %}
+
+{% block title %}
+  RestForm
+{% endblock %}
+
+
+{% block content %}
+    <h1>{{ object.restaurant_name }}</h1>
+    <p><strong>Author:</strong> {{ object.type }}</p>
+    <p><strong>Published Date:</strong> {{ object.address }}</p>
+    <a href="{% url 'rest_update' object.pk %}">Edit</a>
+    <a href="{% url 'rest_delete' object.pk %}">Delete</a>
+    <a href="{% url 'rest_list' %}">Back to Rest List</a>
+{% endblock %}

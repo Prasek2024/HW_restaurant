@@ -1,18 +1,19 @@
+
 {% extends "master.html" %}
 
 {% block title %}
-  REST_list
+  RestList
 {% endblock %}
 
 
 {% block content %}
-  <h1>Restaurant_list</h1>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-
-
+<h1>Book List</h1>
+<a href="{% url 'rest_create' %}">Add New Rest</a>
+<ul>
+    {% for book in object_list %}
+    <li>
+        <a href="{% url 'rest_detail' Rest_list.pk %}">{{ Rest_list.restaurant_name }}</a> and {{ Rest_list.type }}
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
